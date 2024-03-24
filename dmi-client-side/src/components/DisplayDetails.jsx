@@ -48,17 +48,17 @@ const DisplayDetails = () => {
 
   return (
     <>
-      <form>
-        Course Title:{" "}
+      <form onSubmit={handleSubmit}>
+        Course Title:
         <input
           type="text"
-          
+          value = {courseTitle}
           onChange={(e) => setCourseTitle(e.target.value)}
         />
         <br />
         <br />
         {courseTitle} <br />
-        Course Fee:{" "}
+        Course Fee:
         <input
           type="text"
           value={courseFee}
@@ -68,7 +68,7 @@ const DisplayDetails = () => {
         <br />
         {courseFee}
         <br />
-        <button onClick = {handleSubmit}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
 
       <button onClick={getAllCourses}>Get courses</button>
