@@ -32,6 +32,8 @@ const DisplayDetails = () => {
       });
   };
 
+
+
   const deleteData = (index) => {
     axios
       .delete(`http://localhost:3001/deleteCourse/${index}`)
@@ -46,11 +48,11 @@ const DisplayDetails = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         Course Title:{" "}
         <input
           type="text"
-          value={courseTitle}
+          
           onChange={(e) => setCourseTitle(e.target.value)}
         />
         <br />
@@ -66,7 +68,7 @@ const DisplayDetails = () => {
         <br />
         {courseFee}
         <br />
-        <button type="submit">Submit</button>
+        <button onClick = {handleSubmit}>Submit</button>
       </form>
 
       <button onClick={getAllCourses}>Get courses</button>
